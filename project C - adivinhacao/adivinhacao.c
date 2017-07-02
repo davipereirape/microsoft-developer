@@ -1,11 +1,14 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include <locale.h>
 
 // #define NUMERO_TENTATIVAS 3 (DEFINE VARIÁVEL GLOBAL)
  
 int main ()
 {
+    //setlocale(LC_ALL, "Portuguese");//habilita a acentuação para o português  
+
     // Utilizado o compilador GCC
     // Imprime o cabecalho do nosso jogo
     printf(" \n");
@@ -13,15 +16,15 @@ int main ()
     printf("         P /_\\   P                                  \n");                 
     printf("        /_\\_|_|_/_\\                               \n");                  
     printf("    n_n | ||. .|| | n_n       Bem vindo ao          \n");
-    printf("    |_|_|nnnn nnnn|_|_|    Jogo de Adivinhação!     \n");
+    printf("    |_|_|nnnn nnnn|_|_|    Jogo de Adivinha%c%co!     \n", 135, 132);
     printf("   |" "  |  |_|  |"  " |                            \n");
     printf("   |_____| ' _ ' |_____|                            \n");
     printf("         \\__|_|__/                                 \n\n");
     
     // VERIFICANDO O NíVEL DO JOGO
     int nivel;
-    printf("Qual o nível de dificuldade? \n");
-    printf("(1) Fácil (2) Médio (3) Difícil \n\n");
+    printf("Qual o n%cvel de dificuldade? \n", 163);
+    printf("(1) F%ccil (2) M%cdio (3) Dif%ccil \n\n", 160, 130, 141);
     printf("Escolha: ");
     scanf("%d", &nivel);
 
@@ -56,13 +59,13 @@ int main ()
     for (int i = 1; i <= numerotentativas; i++)
     {
         printf("Tentativa %d \n", ++tentativas);
-        printf("Qual é o seu chute? ");
+        printf("Qual %c o seu chute? ", 130);
         scanf("%d", &chute); // Recolhe o valor digitado pelo usuário. O %d significa que é esperado um número.
         printf("Seu chute foi: %d !\n", chute);
 
         if (chute < 0)
         {
-            printf("Você não pode chutar números negativos! \n");
+            printf("Você n%co pode chutar n%cmeros negativos! \n", 132, 151);
             continue;
         }
 
@@ -72,9 +75,9 @@ int main ()
         if (acertou)            
             break;
         else if (maior)
-            printf("Seu chute foi maior que o número secreto! \n");
+            printf("Seu chute foi maior que o n%cmero secreto! \n", 151);
         else
-            printf("Seu chute foi menor que o número secreto! \n");
+            printf("Seu chute foi menor que o n%cmero secreto! \n", 151);
         
         double pontosperdidos = (double) (chute - numerosecreto) / 2;
         pontos = pontos - abs(pontosperdidos); // função abs retira o sinal, trazendo apenas o número.
@@ -99,13 +102,13 @@ int main ()
         printf("         OOOOOO         OOOOOO                  \n");
         printf("             OOOOOOOOOOOO                     \n\n");
 
-        printf("Parabéns, você ganhou!\n");
-        printf("Você acertou em %d tentativas!\n", tentativas);
+        printf("Parab%cns, voc%c ganhou!\n", 130, 136);
+        printf("Voc%c acertou em %d tentativas!\n", 136, tentativas);
         printf("Total de pontos: %.2f\n", pontos );
     }
     else 
     {
-        printf("Você perdeu! Tente de novo! \n");
+        printf("Voc%c perdeu! Tente de novo! \n", 136);
         printf("       \\|/ ____ \\|/       \n");
         printf("        @~/ ,. \\~@        \n");
         printf("       /_( \\__/ )_\\       \n");
