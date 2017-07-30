@@ -7,3 +7,6 @@ Projects of studies about  programming languages of Microsoft. Like C, C++, C# a
 
 - Project Tetri
   - Small library which provides means to control score and rank in the game tetris 
+  
+- Jogo da forca
+  - It is a hangman game! It was explored the create of functions, pointers, memory address, among others characteristics of linguage C.
