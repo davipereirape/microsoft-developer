@@ -4,3 +4,5 @@
 *.settings
 
 Implementacao/java/target/*
+microsoft-developer/jogo da forca/.idea
+/*.idea
